@@ -8,7 +8,11 @@ const placesList = document.querySelector('.places__list');
 // Функция создания карточки
 function createCard(cardTitle, cardImage, onDeleteCard) {
     const cardElement = cardTemplateElement.cloneNode(true);
-    cardElement.querySelector('.card__image').src = cardImage;
+
+    const cardImageElement = cardElement.querySelector(".card__image");
+    cardImageElement.src = cardImage;
+    cardImageElement.alt = cardTitle;
+
     cardElement.querySelector('.card__title').textContent = cardTitle;
     cardElement.querySelector('.card__like-button').addEventListener('click', function (event) {
         event.target.classList.toggle('card__like-button_is-active')
