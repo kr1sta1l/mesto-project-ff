@@ -15,9 +15,9 @@ const addButton = document.querySelector('.profile__add-button');
 const profileTitle = document.querySelector('.profile__title');
 const profileDescription = document.querySelector('.profile__description');
 
-const formElement = document.querySelector('[name="edit-profile"]');
-const nameInput = formElement.querySelector('.popup__input_type_name');
-const jobInput = formElement.querySelector('.popup__input_type_description');
+const profileFormElement = document.querySelector('[name="edit-profile"]');
+const nameInput = profileFormElement.querySelector('.popup__input_type_name');
+const jobInput = profileFormElement.querySelector('.popup__input_type_description');
 
 const newCardForm = document.querySelector('[name="new-place"]');
 const cardNameInput = newCardForm.querySelector('.popup__input_type_card-name');
@@ -35,7 +35,7 @@ function handleCardImageClick(cardTitle, cardImage) {
     popupImageElement.src = cardImage;
 }
 
-function handleFormSubmit(event) {
+function handleProfileFormSubmit(event) {
     event.preventDefault();
     profileTitle.textContent = nameInput.value;
     profileDescription.textContent = jobInput.value;
@@ -63,7 +63,7 @@ editButton.addEventListener('click', () => {
 
 addButton.addEventListener('click', () => openModal(popupNewCard));
 
-formElement.addEventListener('submit', handleFormSubmit);
+profileFormElement.addEventListener('submit', handleProfileFormSubmit);
 newCardForm.addEventListener('submit', handleNewCardSubmit);
 
 
